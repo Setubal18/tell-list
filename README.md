@@ -1,6 +1,6 @@
 # Lista de Contatos
 
-()[]
+[Live Browser](https://tell-list-setubal.vercel.app/lista-telefonica)
 
 ## **Estrutura**
 
