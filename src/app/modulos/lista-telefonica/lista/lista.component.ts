@@ -28,9 +28,6 @@ export class ListaComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-    console.log(changes)
     if(changes["lista"].currentValue) {
       this.dataSource = new MatTableDataSource(changes['lista'].currentValue)
     }
@@ -39,8 +36,6 @@ export class ListaComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
     this.dataSource.sort = this.sort;
   }
 
@@ -58,7 +53,6 @@ export class ListaComponent implements OnInit {
   }
 
   announceSortChange(sortState: any) {
-    console.log(`Sort changed: column=${sortState.active}, direction=${sortState.direction}`);
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Ordenando ${sortState.direction}`);
     } else {
