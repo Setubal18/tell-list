@@ -42,8 +42,7 @@ export class FormComponent implements OnInit {
 
   salvar(){
     this.emitform.emit(this.formTell.value);
-    this.cancelar();
-    console.log(this.formTell.value);
+    this.reset();
   }
 
   cancelar(){
@@ -52,8 +51,7 @@ export class FormComponent implements OnInit {
 
   reset(){
     this.formTell.reset();
-    this.formTell.controls["id"].setValue(this.generateId());
-    this.formTell.controls["categoria"].setValue(TelefoneOpcoes.Categoria);
+    this.formInit();
   }
 
   private generateId(){
